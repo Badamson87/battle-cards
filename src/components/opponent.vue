@@ -1,9 +1,9 @@
 <template>
-  <div class="opponent">
-    <h1>this is the opponent object</h1>
-
-    <opponentHand></opponentHand>
-
+  <div class="opponent row">
+    <div class="col-12">
+      <h1>this is the opponent object</h1>
+      <opponentHand></opponentHand>
+    </div>
   </div>
 </template>
 

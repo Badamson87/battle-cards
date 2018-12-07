@@ -1,12 +1,7 @@
 <template>
   <div class="container-fluid">
-    <div class="row">
-      <div class="col-12">
-        <!-- {{opponent.hand}} -->
-        <opponent></opponent>
-      </div>
-    </div>
-  </div>
+    <!-- {{opponent}} -->
+    <opponent></opponent>
   </div>
 </template>
 
