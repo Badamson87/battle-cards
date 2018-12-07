@@ -1,8 +1,8 @@
 <template>
   <div class="opponentHand">
-    <div v-for="card in opponentHand" class="card col-2">
+    <div v-for="card in opponentHand" class="opponentCard col-2">
       <h5>{{card.name}}</h5>
-      <img :src="card.img" style="height: 150px" />
+      <img :src="card.img" style="height: 125px" />
       <p>Attack: {{card.attack}}</p>
       <p>Shield: {{card.defense}}</p>
       <p>Health: {{card.health}}</p>
@@ -29,17 +29,16 @@
 </script>
 
 <style>
-  .card {
+  .opponentHand {
+    display: flex;
+    border: solid red;
+    justify-content: space-around;
+  }
+
+  .opponentCard {
     display: flex;
     background-color: lightblue;
     flex-direction: column;
     border: solid red;
-  }
-
-  .opponentHand {
-    border: solid red;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
   }
 </style>

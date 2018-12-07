@@ -1,7 +1,7 @@
 <template>
   <div class="opponent row">
     <div class="col-12">
-      <h1>this is the opponent object</h1>
+      <h1>{{opponent.name}}</h1>
       <opponentHand></opponentHand>
     </div>
   </div>

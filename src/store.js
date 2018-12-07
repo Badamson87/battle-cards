@@ -15,6 +15,9 @@ export default new Vuex.Store({
     game: {
       opponent: {
         hand: []
+      },
+      player: {
+        hand: []
       }
     }
   },
@@ -35,6 +38,7 @@ export default new Vuex.Store({
     getGame({ commit }, id) {
       api.get('/' + id)
         .then(res => {
+          console.log(res)
           commit('setGame', res.data.data)
         })
     }
