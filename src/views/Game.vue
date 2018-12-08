@@ -6,6 +6,7 @@
     <br>
     <br>
     <h3>Will Fight Against</h3>
+    <button>Fight</button>
     <br>
     <br>
     <br>
