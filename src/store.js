@@ -18,7 +18,8 @@ export default new Vuex.Store({
         cardId: ''
       },
       player: {
-        hand: []
+        hand: [],
+        cardId: ''
       }
     }
   },
@@ -28,6 +29,9 @@ export default new Vuex.Store({
     },
     setOC(state, cardId) {
       state.game.opponent.cardId = cardId
+    },
+    setPC(state, cardId) {
+      state.game.player.cardId = cardId
     }
   },
   actions: {
@@ -47,8 +51,14 @@ export default new Vuex.Store({
         })
     },
     setOpponentCard({ commit }, cardId) {
+      console.log(cardId)
       commit('setOC', cardId)
-    }
+    },
+    setPlayerCard({ commit }, cardId){
+      console.log(cardId)
+      commit('setPC', cardId)
+    },
+    // fight({ commit }, payload)
 
   }
 })

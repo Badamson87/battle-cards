@@ -2,11 +2,11 @@
   <div class="opponentHand">
     <div v-for="card in opponentHand" class="opponentCard col-2">
       <h5>{{card.name}}</h5>
-      <img :src="card.img" style="height: 125px" />
+      <img :src="card.img" style="height: 100px" />
       <p>Attack: {{card.attack}}</p>
       <p>Shield: {{card.defense}}</p>
       <p>Health: {{card.health}}</p>
-      <button @click="setOpponentCard(card.id)">Select card</button>
+      <button @click="setOpponentCard(card.id)">Prepare for Glory</button>
     </div>
   </div>
 </template>
