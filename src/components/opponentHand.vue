@@ -6,6 +6,7 @@
       <p>Attack: {{card.attack}}</p>
       <p>Shield: {{card.defense}}</p>
       <p>Health: {{card.health}}</p>
+      <button @click="setOpponentCard(card.id)">Select card</button>
     </div>
   </div>
 </template>
@@ -23,7 +24,11 @@
         return this.$store.state.game.opponent.hand
       }
     },
-    methods: {}
+    methods: {
+      setOpponentCard(cardId) {
+        this.$store.dispatch("setOpponentCard", cardId)
+      }
+    }
   }
 
 </script>

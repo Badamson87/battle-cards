@@ -14,7 +14,8 @@ export default new Vuex.Store({
   state: {
     game: {
       opponent: {
-        hand: []
+        hand: [],
+        cardId: ''
       },
       player: {
         hand: []
@@ -24,6 +25,9 @@ export default new Vuex.Store({
   mutations: {
     setGame(state, game) {
       state.game = game
+    },
+    setOC(state, cardId) {
+      state.game.opponent.cardId = cardId
     }
   },
   actions: {
@@ -41,6 +45,9 @@ export default new Vuex.Store({
           console.log(res)
           commit('setGame', res.data.data)
         })
+    },
+    setOpponentCard({ commit }, cardId) {
+      commit('setOC', cardId)
     }
 
   }
