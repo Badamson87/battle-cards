@@ -19,11 +19,15 @@ export default new Vuex.Store({
       },
       player: {
         hand: [],
-        cardId: ''
+
       }
     }
   },
   mutations: {
+    getOC(state) {
+      return state.game.opponent.cardId
+    },
+
     setGame(state, game) {
       state.game = game
     },
@@ -54,11 +58,16 @@ export default new Vuex.Store({
       console.log(cardId)
       commit('setOC', cardId)
     },
-    setPlayerCard({ commit }, cardId){
+    setPlayerCard({ commit }, cardId) {
       console.log(cardId)
       commit('setPC', cardId)
     },
-    // fight({ commit }, payload)
-
-  }
+    fight({ commit }, gameDetails) {
+      api.put('/' + gameDetails.gameId, gameDetails.cards)
+        .then(res => {
+          console.log(res)
+          commit('setGame', res.data.game)
+        })
+    },
+  },
 })

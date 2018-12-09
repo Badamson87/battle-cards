@@ -6,7 +6,7 @@
     <br>
     <br>
     <h3 class="text">Will Fight Against</h3>
-    <button @click="fight({"playerId": setPC})>Fight</button>
+    <button @click="fight()">Fight</button>
     <br>
     <br>
     <br>
@@ -19,13 +19,13 @@
   import player from '@/components/player.vue'
   export default {
     name: '',
-    //mounted that sends the id from the route to the store which makes an http request to get the game with that id
     data() {
       return {
 
       }
 
     },
+    //mounted that sends the id from the route to the store which makes an http request to get the game with that id
     mounted() {
       this.$store.dispatch("getGame", this.$route.params.id)
     },
@@ -45,7 +45,17 @@
       player
     },
     methods: {
-      fight(payload){
+      fight() {
+        let gameDetails = {
+          gameId: this.$route.params.id,
+          cards: {
+            "playerCardId": this.$store.state.game.player.cardId,
+            "opponentCardId": this.$store.state.game.opponent.cardId
+          }
+        }
+        this.$store.dispatch('fight', gameDetails)
+        console.log(this.$store.state.game.player.cardId)
+        console.log(this.$store.state.game.opponent.cardId)
 
       }
     }
@@ -54,10 +64,8 @@
 </script>
 
 <style>
-  .gamePage{
+  .gamePage {
     background-size: cover;
-   background-image: url(https://i0.wp.com/www.italyswonders.com/wp-content/uploads/2014/07/vlcsnap-2014-07-17-15h32m39s153.jpg)
+    background-image: url(https://i0.wp.com/www.italyswonders.com/wp-content/uploads/2014/07/vlcsnap-2014-07-17-15h32m39s153.jpg)
   }
-
-
 </style>
