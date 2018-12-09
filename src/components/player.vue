@@ -1,7 +1,8 @@
 <template>
   <div class="player row">
     <div class="col-12">
-      <h1>{{player.name}}</h1>
+        <p class="text">Reserve: {{player.remainingCards}}</p>
+      <h3 class="text">{{player.name}}</h3>
       <playerHand></playerHand>
     </div>
 

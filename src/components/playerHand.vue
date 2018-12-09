@@ -1,14 +1,14 @@
 <template>
   <div class="playerHand">
     <div v-for="card in playerHand" class="playerCard col-2">
-      <h5>{{card.name}}</h5>
-      <img :src="card.img" style='height: 100px'>
-      <p>Attack: {{card.attack}}</p>
-      <p>Shield {{card.defense}}</p>
-      <p>Health {{card.health}}</p>
-      <button @click="setPlayerCard(card.id)">Prepare for Glory</button>
+     <div class="card" @click="setPlayerCard(card.id)">
+       <h5>{{card.name}}</h5>
+       <img :src="card.img" style='height: 100px'>
+       <p>Attack: {{card.attack}}</p>
+       <p>Shield {{card.defense}}</p>
+       <p>Health {{card.health}}</p>
+     </div>
     </div>
-
   </div>
 </template>
 
@@ -37,14 +37,11 @@
 <style>
   .playerHand {
     display: flex;
-    border: solid red;
     justify-content: space-around;
   }
 
   .playerCard {
     display: flex;
-    flex-direction: column;
-    background-color: lightgreen;
-    border: solid red
+    flex-direction: column
   }
 </style>

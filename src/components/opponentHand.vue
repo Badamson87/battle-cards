@@ -1,13 +1,19 @@
 <template>
   <div class="opponentHand">
     <div v-for="card in opponentHand" class="opponentCard col-2">
-      <h5>{{card.name}}</h5>
-      <img v-if="card.visible" :src="card.img" style="height: 100px" />
-      <img v-if="!card.visible" src="@/assets/img/gladiator.jpg" style="height: 100px" />
-      <p>Attack: {{card.attack}}</p>
-      <p>Shield: {{card.defense}}</p>
-      <p>Health: {{card.health}}</p>
-      <button @click="setOpponentCard(card.id)">Prepare for Glory</button>
+      <div class="card" @click="setOpponentCard(card.id)">
+        <div v-if="!card.visable">
+          <img src="@/assets/img/gladiator.jpg">
+          
+        </div>
+        <div v-if="card.visible">
+          <h5>{{card.name}}</h5>
+          <img :src="card.img" style="height: 100px" />
+          <p>Attack: {{card.attack}}</p>
+          <p>Shield: {{card.defense}}</p>
+          <p>Health: {{card.health}}</p>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -37,14 +43,11 @@
 <style>
   .opponentHand {
     display: flex;
-    border: solid red;
     justify-content: space-around;
   }
 
   .opponentCard {
     display: flex;
-    background-color: lightblue;
-    flex-direction: column;
-    border: solid red;
+    flex-direction: column
   }
 </style>

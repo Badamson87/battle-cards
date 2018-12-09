@@ -5,7 +5,7 @@
     <br>
     <br>
     <br>
-    <h3 class="text">Will Fight Against</h3>
+    <h3 class="text">ARE YOU NOT ENTERTAINED</h3>
     <button @click="fight()">Fight</button>
     <br>
     <br>
@@ -66,6 +66,10 @@
 <style>
   .gamePage {
     background-size: cover;
-    background-image: url(https://i0.wp.com/www.italyswonders.com/wp-content/uploads/2014/07/vlcsnap-2014-07-17-15h32m39s153.jpg)
+    background-image: url('https://i0.wp.com/www.italyswonders.com/wp-content/uploads/2014/07/vlcsnap-2014-07-17-15h32m39s153.jpg')
+  }
+  .text{
+    color: white;
+    text-shadow: 0 0 10px black
   }
 </style>

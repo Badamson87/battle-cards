@@ -1,7 +1,8 @@
 <template>
   <div class="opponent row">
     <div class="col-12">
-      <h1>{{opponent.name}}</h1>
+      <h3 class="text">{{opponent.name}}</h3>
+      <p class="text">Reserve: {{opponent.remainingCards}}</p>
       <opponentHand></opponentHand>
     </div>
   </div>
