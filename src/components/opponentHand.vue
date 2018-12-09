@@ -2,7 +2,8 @@
   <div class="opponentHand">
     <div v-for="card in opponentHand" class="opponentCard col-2">
       <h5>{{card.name}}</h5>
-      <img :src="card.img" style="height: 100px" />
+      <img v-if="card.visible" :src="card.img" style="height: 100px" />
+      <img v-if="!card.visible" src="@/assets/img/gladiator.jpg" style="height: 100px" />
       <p>Attack: {{card.attack}}</p>
       <p>Shield: {{card.defense}}</p>
       <p>Health: {{card.health}}</p>
