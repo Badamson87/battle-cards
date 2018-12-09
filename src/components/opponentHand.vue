@@ -4,9 +4,8 @@
       <div class="card" @click="setOpponentCard(card.id)">
         <div v-if="!card.visable">
           <img src="@/assets/img/gladiator.jpg">
-          
         </div>
-        <div v-if="card.visible">
+        <div v-show="card.visible">
           <h5>{{card.name}}</h5>
           <img :src="card.img" style="height: 100px" />
           <p>Attack: {{card.attack}}</p>

@@ -1,5 +1,5 @@
 <template>
-  <div class="playerHand">
+  <div class="playerHand">      
     <div v-for="card in playerHand" class="playerCard col-2">
      <div class="card" @click="setPlayerCard(card.id)">
        <h5>{{card.name}}</h5>

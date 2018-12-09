@@ -2,7 +2,7 @@
   <div class="player row">
     <div class="col-12">
         <p class="text">Reserve: {{player.remainingCards}}</p>
-      <h3 class="text">{{player.name}}</h3>
+      <h3 class="text">Gladiator</h3>
       <playerHand></playerHand>
     </div>
 
