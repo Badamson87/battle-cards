@@ -2,16 +2,14 @@
   <div class="opponentHand">
     <div v-for="card in opponentHand" class="opponentCard col-2">
       <div class="card" @click="setOpponentCard(card.id)">
-        <div v-if="!card.visable">
-          <img src="@/assets/img/gladiator.jpg">
-        </div>
-        <div v-show="card.visible">
+        <div v-if="card.visible">
           <h5>{{card.name}}</h5>
           <img :src="card.img" style="height: 100px" />
           <p>Attack: {{card.attack}}</p>
           <p>Shield: {{card.defense}}</p>
           <p>Health: {{card.health}}</p>
         </div>
+        <img v-else src="@/assets/img/gladiator.jpg">
       </div>
     </div>
   </div>
@@ -47,6 +45,7 @@
 
   .opponentCard {
     display: flex;
-    flex-direction: column
+    flex-direction: column;
+
   }
 </style>
