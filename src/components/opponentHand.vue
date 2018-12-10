@@ -1,7 +1,7 @@
 <template>
   <div class="opponentHand">
     <div v-for="card in opponentHand" class="opponentCard col-2">
-      <div class="card" @click="setOpponentCard(card.id)">
+      <div class="card" :class="{'border-primary': opponent == card.id}" @click="setOpponentCard(card.id)">
         <div v-if="card.visible">
           <h5>{{card.name}}</h5>
           <img :src="card.img" style="height: 100px" />
@@ -26,6 +26,9 @@
     computed: {
       opponentHand() {
         return this.$store.state.game.opponent.hand
+      },
+      opponent() {
+        return this.$store.state.game.opponent.cardId
       }
     },
     methods: {

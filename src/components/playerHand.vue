@@ -1,13 +1,13 @@
 <template>
-  <div class="playerHand">      
+  <div class="playerHand">
     <div v-for="card in playerHand" class="playerCard col-2">
-     <div class="card" @click="setPlayerCard(card.id)">
-       <h5>{{card.name}}</h5>
-       <img :src="card.img" style='height: 100px'>
-       <p>Attack: {{card.attack}}</p>
-       <p>Shield {{card.defense}}</p>
-       <p>Health {{card.health}}</p>
-     </div>
+      <div class="card" :class="{'border-primary': player == card.id}" @click="setPlayerCard(card.id)">
+        <h5>{{card.name}}</h5>
+        <img :src="card.img" style='height: 100px'>
+        <p>Attack: {{card.attack}}</p>
+        <p>Shield {{card.defense}}</p>
+        <p>Health {{card.health}}</p>
+      </div>
     </div>
   </div>
 </template>
@@ -23,10 +23,13 @@
     computed: {
       playerHand() {
         return this.$store.state.game.player.hand
+      },
+      player() {
+        return this.$store.state.game.player.cardId
       }
     },
     methods: {
-      setPlayerCard(cardId){
+      setPlayerCard(cardId) {
         this.$store.dispatch("setPlayerCard", cardId)
       }
     }

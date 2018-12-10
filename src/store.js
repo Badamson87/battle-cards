@@ -21,6 +21,10 @@ export default new Vuex.Store({
         hand: [],
 
       }
+    },
+    activeCards: {
+      playerCardId: '',
+      opponentCardId: ''
     }
   },
   mutations: {
@@ -32,10 +36,12 @@ export default new Vuex.Store({
       state.game = game
     },
     setOC(state, cardId) {
-      state.game.opponent.cardId = cardId
+      Vue.set(state.game.opponent, "cardId", cardId)
+      //state.game.opponent.cardId = cardId
     },
     setPC(state, cardId) {
-      state.game.player.cardId = cardId
+      Vue.set(state.game.player, "cardId", cardId)
+      // state.game.player.cardId = cardId
     }
   },
   actions: {
